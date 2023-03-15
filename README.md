@@ -26,11 +26,11 @@ OS NGD data is used because of its detailed attribution and ease of filtering pa
 
 How to access this OS data: 
 
-1. Create a recipe in OS Select+Build on the OS Data Hub by expanding Transport theme > Transport Features > Road Track Or Path.  
+  1. Create a recipe in OS Select+Build on the OS Data Hub by expanding Transport theme > Transport Features > Road Track Or Path.  
 
-  a. Apply a filter to this data to include ‘Path’, ‘Path and Steps’, ‘Pavement’, ‘Pavement and Steps’. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Apply a filter to this data to include ‘Path’, ‘Path and Steps’, ‘Pavement’, ‘Pavement and Steps’. 
 
-  b. Create the recipe. You will then need to create a data package in a GeoPackage (GPKG) format (as this is what the FME workbench uses) for the area you require.  We’ve used GeoPackage because of its plug-and-play nature, but other formats can be used if the workbench is adapted. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Create the recipe. You will then need to create a data package in a GeoPackage (GPKG) format (as this is what the FME workbench uses) for the area you require.  We’ve used GeoPackage because of its plug-and-play nature, but other formats can be used if the workbench is adapted. 
 
 ### Published Parameters  
 
@@ -59,29 +59,29 @@ i. Advanced Analysis (optional): an optional addition to the workbench that allo
 
 This next section provides a brief overview of the methodology within the workbench. 
 
-2. The pavement and path GPKG from OS Select+Build and the AOI are read into the workbench. 
+  2. The pavement and path GPKG from OS Select+Build and the AOI are read into the workbench. 
 
-3. Generating the centreline & transects:   
+  3. Generating the centreline & transects:   
 
-  a. A centreline is generated from the Path and Pavement polygon from OS Select+Build in order to create the transects. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. A centreline is generated from the Path and Pavement polygon from OS Select+Build in order to create the transects. 
 
-  b. Transects are created at a user specified distance (see transect spacing parameter) along the centreline and rotated 90 degrees across the Path and Pavement features. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Transects are created at a user specified distance (see transect spacing parameter) along the centreline and rotated 90 degrees across the Path and Pavement features. 
 
-  c. Transects are extended to a user specified distance (see line extension in metres parameter) either side of the centreline so the full cross-section of the polygons are captured.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Transects are extended to a user specified distance (see line extension in metres parameter) either side of the centreline so the full cross-section of the polygons are captured.   
 
-  d. Transects are then clipped to the pavement/path data and any remnants are removed. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Transects are then clipped to the pavement/path data and any remnants are removed. 
 
-4. Transect Testing 
+  4. Transect Testing 
 
-  a.) Transects are tested by checking to see if a transect intersects its own centreline. If it does, then it passes.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Transects are tested by checking to see if a transect intersects its own centreline. If it does, then it passes.   
 
-  b.) If a transect crosses too many other transects, it is removed (as set in the allowable overlapping lines parameter). 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. If a transect crosses too many other transects, it is removed (as set in the allowable overlapping lines parameter). 
 
-5. Data Output 
+  5. Data Output 
 
-  a.) The data is appended with the transect width figure in metres based on the Transect ID. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. The data is appended with the transect width figure in metres based on the Transect ID. 
 
-  b.) A single GeoPackage is created with a name based on the AOI Name parameter and date.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. A single GeoPackage is created with a name based on the AOI Name parameter and date.  
 
 ## Licence
 The contents of this repository are licensed under the [Open Government Licence 3.0.](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
